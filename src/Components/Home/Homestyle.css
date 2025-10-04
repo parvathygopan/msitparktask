@@ -115,8 +115,8 @@
   color: #000000;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   font-family: "Poppins", sans-serif;
   transition: all 0.2s ease-in-out;
 }
@@ -330,7 +330,7 @@
     padding: 10px 0;
   }
   .nav_items2 li > a {
-    font-size: 13px;
+    font-size: 14px;
     padding: 10px;
   }
 }
