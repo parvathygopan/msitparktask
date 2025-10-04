@@ -46,7 +46,7 @@
   flex-grow: 0.7;
 }
 .logo-img {
-  width: 130px;
+  width: 180px !important;
   padding: 10px;
   position: relative;
   /* top: -29px; */
