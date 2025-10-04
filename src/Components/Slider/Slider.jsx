@@ -1,7 +1,7 @@
 import {ChevronLeft, ChevronRight} from "lucide-react";
 import React, {useRef, useState} from "react";
 import "./Slider.css";
-import Star from "../../Assets/star3.png"
+import Star from "../../Assets/star3.png";
 import slider1 from "../../Assets/slider1.jpg";
 import slider2 from "../../Assets/slider2.jpg";
 import slider3 from "../../Assets/slider3.jpg";
@@ -17,38 +17,39 @@ function Slider() {
     {
       id: 1,
       title: "Cleaning Service",
-        image: slider2,
-      color: "#dc2626",
-    },
-    {
-      id: 1,
-      title: "Cleaning Service",
-        image: slider2,
-      color: "#dc2626",
+      image: slider2,
+      color: "#A11000",
     },
     {
       id: 2,
-      title: "Kitchen Service",
-          image: slider3,
-      color: "#0ea5e9",
+      title: "Cleaning Service",
+      image: slider2,
+      color: "#0182FC",
     },
     {
       id: 3,
-      title: "Bathroom Service",
-         image: slider4,
-      color: "#f97316",
+      title: "Kitchen Service",
+      image: slider3,
+      color: "#DF4F02",
     },
     {
       id: 4,
-      title: "Home Service",
-         image: slider5,
-      color: "#7c3aed",
+      title: "Bathroom Service",
+
+      image: slider4,
+      color: "#D9AD00",
     },
     {
       id: 5,
+      title: "Home Service",
+      image: slider5,
+      color: "#3800D2",
+    },
+    {
+      id: 6,
       title: "Garden Service",
-          image: slider6,
-      color: "#10b981",
+      image: slider6,
+      color: "#0096CD",
     },
   ];
 
@@ -94,12 +95,12 @@ function Slider() {
           <div className="slider-header">
             {" "}
             <div className="d-flex">
-               <img
+              <img
                 src={Star}
                 alt="Skilled repair expert"
                 className="badge-icon-star"
-                        />
-           
+              />
+
               <div className="slider-header-top">
                 <button className="service-badge">Our Service</button>
               </div>
@@ -141,6 +142,7 @@ function Slider() {
                   </div>
                   <div className="slider-card-image">
                     <img
+                      style={{border: `10px solid ${service.color}`}}
                       src={service.image}
                       alt={service.title}
                       draggable="false"
