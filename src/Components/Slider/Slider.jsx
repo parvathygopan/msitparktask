@@ -1,5 +1,13 @@
+import {ChevronLeft, ChevronRight} from "lucide-react";
 import React, {useRef, useState} from "react";
-
+import "./Slider.css";
+import Star from "../../Assets/star3.png"
+import slider1 from "../../Assets/slider1.jpg";
+import slider2 from "../../Assets/slider2.jpg";
+import slider3 from "../../Assets/slider3.jpg";
+import slider4 from "../../Assets/slider4.jpg";
+import slider5 from "../../Assets/slider5.jpg";
+import slider6 from "../../Assets/slider6.jpg";
 function Slider() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -9,36 +17,37 @@ function Slider() {
     {
       id: 1,
       title: "Cleaning Service",
-      image:
-        "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=600",
+        image: slider2,
+      color: "#dc2626",
+    },
+    {
+      id: 1,
+      title: "Cleaning Service",
+        image: slider2,
       color: "#dc2626",
     },
     {
       id: 2,
       title: "Kitchen Service",
-      image:
-        "https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg?auto=compress&cs=tinysrgb&w=600",
+          image: slider3,
       color: "#0ea5e9",
     },
     {
       id: 3,
       title: "Bathroom Service",
-      image:
-        "https://images.pexels.com/photos/6195129/pexels-photo-6195129.jpeg?auto=compress&cs=tinysrgb&w=600",
+         image: slider4,
       color: "#f97316",
     },
     {
       id: 4,
       title: "Home Service",
-      image:
-        "https://images.pexels.com/photos/5691576/pexels-photo-5691576.jpeg?auto=compress&cs=tinysrgb&w=600",
+         image: slider5,
       color: "#7c3aed",
     },
     {
       id: 5,
       title: "Garden Service",
-      image:
-        "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=600",
+          image: slider6,
       color: "#10b981",
     },
   ];
@@ -83,11 +92,17 @@ function Slider() {
       <section className="slider-section">
         <div className="container">
           <div className="slider-header">
-            <div className="slider-header-top">
-              <button className="service-badge">
-                <span className="badge-icon">+</span>
-                Our Service
-              </button>
+            {" "}
+            <div className="d-flex">
+               <img
+                src={Star}
+                alt="Skilled repair expert"
+                className="badge-icon-star"
+                        />
+           
+              <div className="slider-header-top">
+                <button className="service-badge">Our Service</button>
+              </div>
             </div>
             <div className="slider-title-row">
               <h2 className="slider-title">Home care essentials</h2>
@@ -100,13 +115,13 @@ function Slider() {
           </div>
 
           <div className="slider-wrapper">
-            <button
+            {/* <button
               className="slider-arrow slider-arrow-left"
               onClick={() => scroll("left")}
               aria-label="Previous"
             >
               <ChevronLeft />
-            </button>
+            </button> */}
 
             <div
               className="slider-container"
@@ -135,13 +150,13 @@ function Slider() {
               ))}
             </div>
 
-            <button
+            {/* <button
               className="slider-arrow slider-arrow-right"
               onClick={() => scroll("right")}
               aria-label="Next"
             >
               <ChevronRight />
-            </button>
+            </button> */}
           </div>
         </div>
       </section>
