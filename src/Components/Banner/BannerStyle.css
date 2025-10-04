@@ -61,7 +61,12 @@
   .banner-title {
     font-size: 56px;
   }
-
+    .banner-title2 {
+    font-size: 56px;
+  }
+.banner-section{
+  padding-top: 200px !important;
+}
   .house-icon {
     width: 64px;
     height: 64px;
@@ -78,6 +83,9 @@
   }
 
   .banner-title {
+    font-size: 42px;
+  }
+  .banner-title2 {
     font-size: 42px;
   }
 
