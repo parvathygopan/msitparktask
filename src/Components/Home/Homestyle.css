@@ -108,7 +108,7 @@
   display: flex;
   text-align: center;
   margin-right: 2rem;
-  padding: 7px 0;
+  padding: 7px 100px;
   transition: all 0.2s ease-in-out;
 }
 .nav_items2 li > a {
