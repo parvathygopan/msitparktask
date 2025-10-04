@@ -16,21 +16,20 @@ function Header() {
   const [isUrl, setIsUrl] = useState(null);
   const [click, setClick] = useState(false);
   const [navbar, setNavbar] = useState(false);
-  const [showProfile, setShowProfile] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
+
 
   useEffect(() => {
     setIsUrl(location.pathname);
   }, [location]);
   const handleClick = () => {
     setClick(!click);
-    setShowDropdown(true);
+  
   };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (profileRef.current && !profileRef.current.contains(event.target)) {
-        setShowProfile(false);
+
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -135,12 +134,21 @@ function Header() {
                       Contact
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <div className="icon-wrapper">
-                      <BiShoppingBag />
+                     <div className="p-1">
+                       <BiShoppingBag />
+                     </div>
                       <span className="badge">2</span>
                     </div>
-                  </li>
+                  </li> */}
+                  <li>
+  <div className="cart-icon-wrapper">
+    <BiShoppingBag className="icon" />
+    <span className="badge">2</span>
+  </div>
+</li>
+
                 </ul>
               </nav>
             </>

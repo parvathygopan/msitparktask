@@ -1,26 +1,30 @@
-import {useState} from "react";
+import { useState } from "react";
 import BaseClient from "../Helpers/BaseClient";
-import {APIEndpoints} from "../Constants/APIEndpoints";
+
+const APIEndpoints = {
+  getProductList: "https://jsonplaceholder.typicode.com/posts",
+};
+
 const useProducts = () => {
   const [productData, setProductData] = useState([]);
   const [productLoading, setProductLoading] = useState(false);
+
   const getProductList = async () => {
+    setProductLoading(true);
     try {
-      setProductLoading(true);
       await BaseClient.get(APIEndpoints.getProductList, {
         onSuccess: (res) => {
           console.log(res, "result from call");
-          if (!Array.isArray(res.result) || res.result.length == 0) return;
-          console.log(res, "result from call");
-          setProductData(res.result);
+          setProductData(res);
         },
-        onFailed: (err) => console.log(err),
+        onFailed: (err) => console.error(err),
       });
     } finally {
       setProductLoading(false);
     }
   };
-  return {getProductList, productData, productLoading};
+
+  return { getProductList, productData, productLoading };
 };
 
 export default useProducts;

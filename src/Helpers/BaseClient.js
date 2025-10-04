@@ -9,32 +9,20 @@ const api = axios.create({
 //Interceptor for handle the response
 api.interceptors.response.use(
   function (response) {
-    let errorResponse = { message: "Someting Went Wrong", error: true };
-    if (
-      response.data != null &&
-      response.data.error != null &&
-      response.data.error === false
-    ) {
-      return response.data;
-    }
-    return Promise.reject(errorResponse);
+    return response.data;
   },
-  function (res) {
-    let errorResponse = { message: "Someting Went Wrong", error: true };
-    if (res != null && res.response != null && res.response.data != null) {
-      errorResponse = res.response.data;
-    }
-    return Promise.reject(errorResponse);
+  function (error) {
+    return Promise.reject(error);
   }
 );
 
 class BaseClient {
   //Get Method
   static async get(endpoint, { onSuccess, onFailed }) {
-    await api
-      .get(endpoint)
-      .then((data) => onSuccess && onSuccess(data))
-      .catch((error) => onFailed && onFailed(error));
+  await api.get(endpoint)
+  .then((data) => onSuccess && onSuccess(data))
+  .catch((error) => onFailed && onFailed(error));
+
   }
 
   //Post Method
