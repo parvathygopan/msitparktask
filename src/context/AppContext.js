@@ -7,6 +7,7 @@ export const AppContextProvider = (props) => {
   const {
     getProductList, productData, productLoading
   } = useProducts();
+  
   useEffect(() => {
     getProductList();
   }, []);

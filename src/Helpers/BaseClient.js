@@ -1,17 +1,9 @@
 import axios from "axios";
 const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-//Create a axios api instance
 const api = axios.create({
   baseURL: BASE_URL,
-  headers: {
-    Authorization: localStorage.getItem("UserPersistent")
-      ? `Bearer ${
-          JSON.parse(localStorage.getItem("UserPersistent")).accessToken
-        }`
-      : null,
-  },
-  withCredentials:true,
+  withCredentials: false, 
 });
 
 //Interceptor for handle the response

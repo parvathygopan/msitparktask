@@ -1,7 +1,6 @@
 import {useState} from "react";
 import BaseClient from "../Helpers/BaseClient";
-import {APIEndpoints} from "../constants/APIEndpoints";
-
+import {APIEndpoints} from "../Constants/APIEndpoints";
 const useProducts = () => {
   const [productData, setProductData] = useState([]);
   const [productLoading, setProductLoading] = useState(false);
@@ -10,7 +9,9 @@ const useProducts = () => {
       setProductLoading(true);
       await BaseClient.get(APIEndpoints.getProductList, {
         onSuccess: (res) => {
+          console.log(res, "result from call");
           if (!Array.isArray(res.result) || res.result.length == 0) return;
+          console.log(res, "result from call");
           setProductData(res.result);
         },
         onFailed: (err) => console.log(err),

@@ -11,6 +11,7 @@ function App() {
           <Route
             key={index}
             path={route.path}
+            exact="true"
             element={route.element}
           />
         ))}

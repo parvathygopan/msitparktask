@@ -23,12 +23,12 @@ function Slider() {
     {
       id: 2,
       title: "Cleaning Service",
-      image: slider2,
+      image: slider1,
       color: "#0182FC",
     },
     {
       id: 3,
-      title: "Kitchen Service",
+      title: "Home Service",
       image: slider3,
       color: "#DF4F02",
     },
@@ -52,21 +52,6 @@ function Slider() {
       color: "#0096CD",
     },
   ];
-
-  const scroll = (direction) => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 300;
-      const newScrollLeft =
-        direction === "left"
-          ? scrollContainerRef.current.scrollLeft - scrollAmount
-          : scrollContainerRef.current.scrollLeft + scrollAmount;
-
-      scrollContainerRef.current.scrollTo({
-        left: newScrollLeft,
-        behavior: "smooth",
-      });
-    }
-  };
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
